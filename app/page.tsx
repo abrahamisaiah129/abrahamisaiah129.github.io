@@ -1,4 +1,4 @@
-import { profile, projects, skills } from "@/content";
+import { profile, projects, experience, publicProjects, skills } from "@/content";
 import styles from "./page.module.css";
 
 function RouteMark() {
@@ -56,10 +56,52 @@ export default function Home() {
               </div>
               <p className={styles.projectSummary}>{project.summary}</p>
               <p className={styles.projectDetail}>{project.detail}</p>
-              <p className={styles.projectStack}>
-                {project.stack.join(", ")}
-              </p>
+              <p className={styles.projectStack}>{project.stack.join(", ")}</p>
+              {project.link && (
+                <a
+                  className={styles.projectLink}
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {project.link.replace("https://", "")}
+                </a>
+              )}
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="experience" className={styles.experience}>
+        <h2 className={styles.sectionHeading}>Also</h2>
+        <div className={styles.experienceList}>
+          {experience.map((role) => (
+            <article key={role.title} className={styles.experienceItem}>
+              <p className={styles.experienceTitle}>
+                {role.title}, {role.org}
+              </p>
+              <p className={styles.experienceDetail}>{role.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" className={styles.publicProjects}>
+        <h2 className={styles.sectionHeading}>Other projects</h2>
+        <div className={styles.publicProjectGrid}>
+          {publicProjects.map((project) => (
+            <a
+              key={project.name}
+              className={styles.publicProjectCard}
+              href={project.demo ?? project.repo}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p className={styles.publicProjectName}>{project.name}</p>
+              <p className={styles.publicProjectDescription}>
+                {project.description}
+              </p>
+            </a>
           ))}
         </div>
       </section>
@@ -67,6 +109,7 @@ export default function Home() {
       <section id="about" className={styles.about}>
         <h2 className={styles.sectionHeading}>About</h2>
         <p className={styles.aboutText}>{profile.summary}</p>
+        <p className={styles.aboutText}>{profile.education}</p>
         <p className={styles.skillsText}>{skills.join(" · ")}</p>
       </section>
 

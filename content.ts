@@ -6,12 +6,13 @@ export const profile = {
   role: "Senior Full-Stack Engineer",
   tagline: "Building the systems money and motion run on.",
   summary:
-    "I build production software for fintech, logistics, and mission-driven organizations — mostly on the MERN stack, mostly the part where real payments, real riders, or real donors have to trust it works. Based in Imo State, Nigeria, currently working with Traxx and taking on select freelance builds under AI Tech Solutions.",
+    "I'm a senior full-stack engineer with a background in Mechatronics Engineering, specializing in fintech platforms, SaaS products, and the payment and tracking infrastructure underneath them. Based in Imo State, Nigeria, currently building Traxx and taking on select freelance work through AI Tech Solutions.",
   location: "Imo State, Nigeria",
-  // TODO: replace with your real contact details before publishing
-  email: "isaiah@example.com",
+  email: "abrahamisaiah129@gmail.com",
   github: "https://github.com/abrahamisaiah129",
-  linkedin: "https://linkedin.com/in/your-linkedin-handle",
+  linkedin: "https://linkedin.com/in/abrahamisaiah",
+  education:
+    "B.Eng. in Mechatronics Engineering (Software Option), Federal University of Technology Owerri",
 };
 
 export type Project = {
@@ -26,41 +27,100 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Traxx",
-    role: "Full-stack engineer",
+    role: "Founding developer",
     summary:
-      "A fleet management and delivery tracking platform for Nigerian logistics businesses.",
+      "A fleet management and delivery-tracking SaaS for Nigerian logistics businesses.",
     detail:
-      "I work across the fleet manager dashboard, the rider progressive web app, and the customer tracking portal — the three surfaces that have to agree on where a delivery actually is in real time. Firestore security rules carry the access-control logic, so the frontend stays focused on flow and state. Current work includes rebuilding email verification and password reset on Firebase OTP, and wiring Mapbox directly into the rider app.",
-    stack: ["React", "Firebase", "Firestore", "Mapbox", "Paystack"],
+      "I work across the fleet manager dashboard, the rider progressive web app, and the customer tracking portal — the three surfaces that have to agree on where a delivery actually is in real time. Firestore security rules carry the access-control logic, so the frontend stays focused on flow and state. Live GPS runs on Mapbox, checkout on Paystack, and current work includes rebuilding email verification and password reset on Firebase OTP.",
+    stack: ["Next.js", "Firebase", "Firestore", "Mapbox", "Paystack"],
   },
   {
     name: "WayaBank",
-    role: "React frontend engineer",
+    role: "Contract frontend engineer, WayaLinks",
     summary:
-      "A Nigerian digital banking product under the WayaLinks group.",
+      "A Nigerian digital banking product under the WayaLinks ecosystem.",
     detail:
-      "Rebuilt the marketing site's hero section around floating transaction cards, reworked navbar scroll behavior and feature-card interactions, and integrated Zoho SalesIQ chat and Meta Pixel. Also refactored the shared SiteContext provider used across WayaBank's sibling products, WayaGram and WayaQuick.",
-    stack: ["React", "TypeScript", "Zoho SalesIQ", "Meta Pixel"],
+      "Sole frontend engineer on a 20-person team, shipping four production fintech products — WayaBank, WayaGram, WayaQuick, and CrowdHelpMe — in four months. Rebuilt the marketing site's hero around floating transaction cards, reworked navbar and feature-card interactions, integrated Zoho SalesIQ and Meta Pixel, restructured the Git repositories, and optimized page-load times platform-wide.",
+    stack: ["React", "Vite", "TypeScript", "Tailwind CSS"],
   },
   {
     name: "ISQDF — Save the Girl Child",
     role: "Freelance developer, AI Tech Solutions",
     summary:
-      "A donation and program site for the Imo Striker Queens Development Foundation, a women's football NGO.",
+      "A donation and program platform for the Imo Striker Queens Development Foundation, a women's football and mentorship charity.",
     detail:
       "Built the full site from a component library up — carousel, program and impact sections, a sponsor marquee, blog — with a Paystack donation flow backed by MongoDB Atlas. Design leans on a red primary, pill-shaped buttons, and glass panels, deployed on Vercel.",
     stack: ["React", "Tailwind CSS", "MongoDB Atlas", "Paystack", "Vercel"],
+    link: "https://isqdf.vercel.app",
+  },
+];
+
+export type Role = {
+  title: string;
+  org: string;
+  detail: string;
+};
+
+export const experience: Role[] = [
+  {
+    title: "Senior Full Stack Developer & Product Manager",
+    org: "DDSA",
+    detail:
+      "Directed a seven-person development team to ship an MVP for a complex financial product in twelve weeks, owning architecture, API design, database modeling, and deployment end to end.",
+  },
+];
+
+export type PublicProject = {
+  name: string;
+  description: string;
+  repo: string;
+  demo?: string;
+};
+
+export const publicProjects: PublicProject[] = [
+  {
+    name: "CreaNote",
+    description: "AI-powered note-taking application.",
+    repo: "https://github.com/abrahamisaiah129/creanote",
+    demo: "https://creanote-five.vercel.app",
+  },
+  {
+    name: "Flier Templating Generator",
+    description: "Web-based utility for generating design fliers and templates.",
+    repo: "https://github.com/abrahamisaiah129/flier-templating-generator",
+    demo: "https://flier-templating-generator.vercel.app",
+  },
+  {
+    name: "Resilient API Gateway Shield",
+    description: "Distributed idempotency engine for fault-tolerant API gateways.",
+    repo: "https://github.com/abrahamisaiah129/Resilient-API-Gateway-Shield-Distributed-Idempotency-Engine",
+  },
+  {
+    name: "House of God Church Admin",
+    description: "Administrative portal for managing church operations.",
+    repo: "https://github.com/abrahamisaiah129/house-of-god-church-admin",
+  },
+  {
+    name: "Mima",
+    description: "Official web presence and landing platform for Mima.",
+    repo: "https://github.com/abrahamisaiah129/mima-official",
+  },
+  {
+    name: "Golf & Football Web App",
+    description: "Full-stack sports web application.",
+    repo: "https://github.com/abrahamisaiah129/GOLFANDFOOTBALLWEBAPP",
   },
 ];
 
 export const skills = [
   "React",
+  "Next.js",
   "Node.js",
   "TypeScript",
   "MongoDB",
   "PostgreSQL",
   "Firebase",
-  "Next.js",
   "Paystack & payment integrations",
+  "Mapbox & live GPS tracking",
   "Tailwind CSS",
 ];
