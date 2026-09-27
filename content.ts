@@ -2,11 +2,11 @@
 // Nothing else in the project needs to change for routine content edits.
 
 export const profile = {
-  name: "Isaiah Abraham",
+  name: "Abraham Isaiah",
   role: "Senior Full-Stack Engineer",
   tagline: "Building the systems money and motion run on.",
   summary:
-    "I'm a senior full-stack engineer with a background in Mechatronics Engineering, specializing in fintech platforms, SaaS products, and the payment and tracking infrastructure underneath them. Based in Nigeria (GMT+1), currently building Traxx and taking on select freelance work through AI Tech Solutions.",
+    "I'm a senior full-stack engineer with a background in Mechatronics Engineering, specializing in fintech platforms, SaaS products, and the payment and tracking infrastructure underneath them. Recently, I've also been heavily leveraging advanced AI agents and LLMs (like Claude and ChatGPT) to accelerate development and enhance architectural decision-making. Based in Nigeria (GMT+1), I'm currently building Traxx and taking on select freelance work through AI Tech Solutions.",
   location: "Nigeria (GMT+1)",
   email: "abrahamisaiah129@gmail.com",
   phone: "0913 226 0101",
@@ -180,15 +180,13 @@ export const clientProjects: ClientProject[] = [
 ];
 
 export const skills = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "PHP & Laravel",
-  "MongoDB",
-  "PostgreSQL",
-  "Firebase",
-  "Paystack & payment integrations",
-  "Mapbox & live GPS tracking",
-  "Tailwind CSS",
+  "JavaScript (ES6+) & TypeScript",
+  "React, Next.js, React Native, & Flutter",
+  "Node.js, Express.js, & PHP (Laravel)",
+  "MongoDB, PostgreSQL, MySQL, & Firebase",
+  "AI Agents, LLMs (Claude, ChatGPT), & Prompt Engineering",
+  "Docker, CI/CD, & System Architecture",
+  "Paystack & Payment Integrations",
+  "Mapbox & Live GPS Tracking",
+  "Tailwind CSS, SCSS, & UI/UX Integration",
 ];
