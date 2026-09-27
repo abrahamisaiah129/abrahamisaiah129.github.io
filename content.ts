@@ -15,6 +15,7 @@ export const profile = {
   // one should be public before treating this as final.
   github: "https://github.com/abrahamisaiah129",
   linkedin: "https://linkedin.com/in/abrahamisaiah",
+  avatar: "https://avatars.githubusercontent.com/u/96689032?v=4",
   education:
     "B.Eng. in Mechatronics Engineering, Federal University of Technology, Owerri (Second Class Honours, 2025). Certificate in Full Stack Web Development, Greenvalue Computer College (2020).",
 };

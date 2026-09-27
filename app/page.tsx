@@ -8,35 +8,6 @@ import {
 } from "@/content";
 import styles from "./page.module.css";
 
-function RouteMark() {
-  // A drawn route with a traveling point — a nod to live delivery tracking,
-  // without leaning on a literal map or icon set.
-  return (
-    <svg
-      className={styles.routeMark}
-      viewBox="0 0 320 320"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        className={styles.routePath}
-        d="M40 260 C 40 180, 120 200, 130 140 S 230 40, 280 60"
-        stroke="var(--accent-dim)"
-        strokeWidth="1.5"
-      />
-      <path
-        className={`${styles.routePath} ${styles.routePathDraw}`}
-        d="M40 260 C 40 180, 120 200, 130 140 S 230 40, 280 60"
-        stroke="var(--accent)"
-        strokeWidth="1.5"
-        pathLength="1"
-      />
-      <circle className={styles.routeStart} cx="40" cy="260" r="4" fill="var(--muted)" />
-      <circle className={styles.routeEnd} cx="280" cy="60" r="4" fill="var(--accent)" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -49,7 +20,16 @@ export default function Home() {
             See recent work
           </a>
         </div>
-        <RouteMark />
+        <div className={styles.heroPhotoFrame}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className={styles.heroPhoto}
+            src={profile.avatar}
+            alt={profile.name}
+            width={220}
+            height={220}
+          />
+        </div>
       </section>
 
       <section id="work" className={styles.work}>
