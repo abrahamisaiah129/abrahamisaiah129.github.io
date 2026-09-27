@@ -5,7 +5,7 @@ import {
   publicProjects,
   clientProjects,
   softcityProjects,
-  skills,
+  skillCategories,
 } from "@/content";
 import styles from "./page.module.css";
 import AnimatedSection from "./AnimatedSection";
@@ -140,10 +140,24 @@ export default function Home() {
       </AnimatedSection>
 
       <AnimatedSection id="about" className={styles.about} delay={0.1}>
-        <h2 className={styles.sectionHeading}>About</h2>
+        <h2 className={styles.sectionHeading}>About & Skills</h2>
         <p className={styles.aboutText}>{profile.summary}</p>
         <p className={styles.aboutText}>{profile.education}</p>
-        <p className={styles.skillsText}>{skills.join(" · ")}</p>
+        
+        <div className={styles.skillsGrid}>
+          {skillCategories.map((group) => (
+            <div key={group.category} className={styles.skillColumn}>
+              <h3 className={styles.skillCategoryTitle}>{group.category}</h3>
+              <div className={styles.skillPills}>
+                {group.items.map((skill) => (
+                  <span key={skill} className={styles.skillPill}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </AnimatedSection>
 
       <AnimatedSection id="contact" className={styles.contact} delay={0.1}>

@@ -176,14 +176,25 @@ export const softcityProjects: ClientProject[] = [
   },
 ];
 
-export const skills = [
-  "JavaScript (ES6+) & TypeScript",
-  "React, Next.js, React Native, & Flutter",
-  "Node.js, Express.js, & PHP (Laravel)",
-  "MongoDB, PostgreSQL, MySQL, & Firebase",
-  "AI Agents, LLMs (Claude, ChatGPT), & Prompt Engineering",
-  "Docker, CI/CD, & System Architecture",
-  "Paystack & Payment Integrations",
-  "Mapbox & Live GPS Tracking",
-  "Tailwind CSS, SCSS, & UI/UX Integration",
+export const skillCategories = [
+  {
+    category: "Languages",
+    items: ["JavaScript (ES6+)", "TypeScript", "C++", "PHP", "SQL", "HTML5", "CSS3", "MATLAB"],
+  },
+  {
+    category: "Frontend & Mobile",
+    items: ["React.js", "Next.js", "React Native", "Flutter", "Vite", "Tailwind CSS", "SCSS/Sass", "Material UI (MUI)"],
+  },
+  {
+    category: "Backend & Architecture",
+    items: ["Node.js", "Express.js", "Laravel", "RESTful APIs", "WebSockets", "Microservices", "System Architecture"],
+  },
+  {
+    category: "Databases & Cloud",
+    items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Docker", "CI/CD", "Vercel", "Cloudflare"],
+  },
+  {
+    category: "AI & Integrations",
+    items: ["AI Agents & LLMs", "Prompt Engineering", "Paystack", "Mapbox", "Google Analytics", "Zoho CRM"],
+  },
 ];

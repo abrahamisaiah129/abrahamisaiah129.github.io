@@ -18,30 +18,61 @@
   margin-bottom: 24px;
 }
 
-.navLinks {
+.navHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navLinksDesktop {
   display: flex;
   gap: 20px;
   font-size: 14px;
   font-family: var(--font-body);
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 4px; /* Space for scrollbar if visible */
-  scrollbar-width: none; /* Firefox */
 }
 
-.navLinks::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-.navLinks a {
+.navLinksDesktop a {
   text-decoration: none;
   color: var(--muted);
   transition: color 0.15s ease;
 }
 
-.navLinks a:hover {
+.navLinksDesktop a:hover {
   color: var(--accent);
+}
+
+.navLinksMobileWrapper {
+  overflow: hidden;
+}
+
+.navLinksMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+  font-size: 16px;
+}
+
+.navLinksMobile a {
+  text-decoration: none;
+  color: var(--muted);
 }
 
 /* ---------- Hero ---------- */
@@ -368,11 +399,48 @@
   margin: 0 0 24px;
 }
 
-.skillsText {
-  max-width: var(--max);
-  font-size: 15px;
-  color: var(--muted);
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.skillColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skillCategoryTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
   margin: 0;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.skillPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillPill {
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.skillPill:hover {
+  border-color: var(--accent);
+  color: var(--ink);
 }
 
 /* ---------- Contact ---------- */
@@ -419,6 +487,18 @@
 @media (max-width: 760px) {
   .main {
     padding: 0 20px;
+  }
+
+  .navHeader {
+    width: 100%;
+  }
+
+  .logo, .hamburger {
+    display: block;
+  }
+
+  .navLinksDesktop {
+    display: none;
   }
 
   .navLinks {
