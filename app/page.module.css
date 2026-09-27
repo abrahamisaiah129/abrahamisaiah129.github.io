@@ -21,9 +21,17 @@
 .navLinks {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
   font-size: 14px;
   font-family: var(--font-body);
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px; /* Space for scrollbar if visible */
+  scrollbar-width: none; /* Firefox */
+}
+
+.navLinks::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .navLinks a {
@@ -409,25 +417,60 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 760px) {
+  .main {
+    padding: 0 20px;
+  }
+
+  .navLinks {
+    gap: 16px;
+    padding-bottom: 8px;
+  }
+
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
     min-height: auto;
-    padding: 64px 0 32px;
+    padding: 32px 0 48px;
+    gap: 32px;
   }
 
-  .heroPhotoFrame {
-    width: 160px;
-    height: 160px;
-    align-self: center;
+  .heroSummary {
+    text-align: center;
+    margin: 0 auto 32px;
   }
 
-  .heroPhoto {
-    width: 160px;
-    height: 160px;
+  .heroPhotoFrame, .heroPhoto {
+    width: 180px;
+    height: 180px;
   }
 
   .sectionHeading {
-    padding-top: 64px;
+    padding-top: 56px;
+    margin-bottom: 32px;
+  }
+
+  .projectList {
+    gap: 40px;
+  }
+
+  .projectHeader {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .experienceHeader {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .publicProjectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactLinks {
+    flex-direction: column;
+    gap: 16px;
   }
 }
