@@ -1,0 +1,225 @@
+.main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 88vh;
+  padding: 48px 0;
+}
+
+.heroText {
+  max-width: var(--max);
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.heroLine {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(36px, 5.2vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+.heroSummary {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 32px;
+}
+
+.cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 13px 26px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+}
+
+.routeMark {
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
+}
+
+.routePath {
+  fill: none;
+}
+
+.routePathDraw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.2s ease-out 0.3s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------- Section heading ---------- */
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 34px);
+  margin: 0 0 40px;
+  padding-top: 96px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Work ---------- */
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.project {
+  max-width: var(--max);
+}
+
+.projectHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.projectName {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 26px;
+  margin: 0;
+  color: var(--ink);
+}
+
+.projectRole {
+  font-size: 14px;
+  color: var(--accent);
+  margin: 0;
+}
+
+.projectSummary {
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.projectDetail {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+
+.projectStack {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ---------- About ---------- */
+
+.aboutText {
+  max-width: var(--max);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+
+.skillsText {
+  max-width: var(--max);
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  padding-bottom: 96px;
+}
+
+.contactText {
+  max-width: var(--max);
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.contactLinks {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  margin-bottom: 64px;
+}
+
+.contactLinks a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.contactLinks a:hover {
+  border-color: var(--accent);
+}
+
+.footer {
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 760px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 64px 0 32px;
+  }
+
+  .routeMark {
+    width: 180px;
+    height: 180px;
+    align-self: center;
+  }
+
+  .sectionHeading {
+    padding-top: 64px;
+  }
+}
