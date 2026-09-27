@@ -7,6 +7,8 @@ import {
   skills,
 } from "@/content";
 import styles from "./page.module.css";
+import AnimatedSection from "./AnimatedSection";
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
   return (
@@ -22,7 +24,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className={styles.hero}>
+      <AnimatedSection className={styles.hero} delay={0.1}>
         <div className={styles.heroText}>
           <p className={styles.kicker}>{profile.role} · {profile.location}</p>
           <h1 className={styles.heroLine}>{profile.tagline}</h1>
@@ -41,9 +43,9 @@ export default function Home() {
             height={220}
           />
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="work" className={styles.work}>
+      <AnimatedSection id="work" className={styles.work} delay={0.2}>
         <h2 className={styles.sectionHeading}>Selected work</h2>
         <div className={styles.projectList}>
           {projects.map((project) => (
@@ -65,15 +67,15 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {project.link.replace("https://", "")}
+                  {project.link.replace("https://", "")} <FiExternalLink style={{ marginLeft: "4px" }} />
                 </a>
               )}
             </article>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="experience" className={styles.experience}>
+      <AnimatedSection id="experience" className={styles.experience} delay={0.1}>
         <h2 className={styles.sectionHeading}>Career</h2>
         <div className={styles.experienceList}>
           {experience.map((role) => (
@@ -88,9 +90,9 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="projects" className={styles.publicProjects}>
+      <AnimatedSection id="projects" className={styles.publicProjects} delay={0.1}>
         <h2 className={styles.sectionHeading}>Other projects</h2>
         <div className={styles.publicProjectGrid}>
           {publicProjects.map((project) => (
@@ -101,16 +103,18 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              <p className={styles.publicProjectName}>{project.name}</p>
+              <p className={styles.publicProjectName}>
+                {project.name} <FiExternalLink style={{ marginLeft: "4px", fontSize: "0.8em" }} />
+              </p>
               <p className={styles.publicProjectDescription}>
                 {project.description}
               </p>
             </a>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="client-work" className={styles.clientWork}>
+      <AnimatedSection id="client-work" className={styles.clientWork} delay={0.1}>
         <h2 className={styles.sectionHeading}>Client work</h2>
         <div className={styles.clientProjectList}>
           {clientProjects.map((project) => (
@@ -129,35 +133,43 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="about" className={styles.about}>
+      <AnimatedSection id="about" className={styles.about} delay={0.1}>
         <h2 className={styles.sectionHeading}>About</h2>
         <p className={styles.aboutText}>{profile.summary}</p>
         <p className={styles.aboutText}>{profile.education}</p>
         <p className={styles.skillsText}>{skills.join(" · ")}</p>
-      </section>
+      </AnimatedSection>
 
-      <section id="contact" className={styles.contact}>
+      <AnimatedSection id="contact" className={styles.contact} delay={0.1}>
         <h2 className={styles.sectionHeading}>Get in touch</h2>
         <p className={styles.contactText}>
           Open to fintech and product engineering roles, and select freelance
           builds through AI Tech Solutions.
         </p>
         <div className={styles.contactLinks}>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
+          <a href={`mailto:${profile.email}`}>
+            <FiMail style={{ marginRight: "6px" }} />
+            {profile.email}
+          </a>
+          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>
+            <FiPhone style={{ marginRight: "6px" }} />
+            {profile.phone}
+          </a>
           <a href={profile.github} target="_blank" rel="noreferrer">
+            <FiGithub style={{ marginRight: "6px" }} />
             GitHub
           </a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
+            <FiLinkedin style={{ marginRight: "6px" }} />
             LinkedIn
           </a>
         </div>
         <p className={styles.footer}>
           {profile.name} · {new Date().getFullYear()}
         </p>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }
