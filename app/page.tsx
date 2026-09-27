@@ -4,6 +4,7 @@ import {
   experience,
   publicProjects,
   clientProjects,
+  softcityProjects,
   skills,
 } from "@/content";
 import styles from "./page.module.css";
@@ -17,8 +18,8 @@ export default function Home() {
         <div className={styles.navLinks}>
           <a href="#work">Selected Work</a>
           <a href="#experience">Career</a>
-          <a href="#projects">Other Projects</a>
           <a href="#client-work">Client Work</a>
+          <a href="#softcity-projects">Softcity Group</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
@@ -92,32 +93,35 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="projects" className={styles.publicProjects} delay={0.1}>
-        <h2 className={styles.sectionHeading}>Other projects</h2>
+      <AnimatedSection id="client-work" className={styles.publicProjects} delay={0.1}>
+        <h2 className={styles.sectionHeading}>Client Work</h2>
         <div className={styles.publicProjectGrid}>
-          {publicProjects.map((project) => (
-            <a
-              key={project.name}
-              className={styles.publicProjectCard}
-              href={project.demo ?? project.repo}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p className={styles.publicProjectName}>
-                {project.name} <FiExternalLink style={{ marginLeft: "4px", fontSize: "0.8em" }} />
-              </p>
-              <p className={styles.publicProjectDescription}>
-                {project.description}
-              </p>
-            </a>
-          ))}
+          {publicProjects.map((project) => {
+            const link = project.demo ?? project.repo;
+            return (
+              <a
+                key={project.name}
+                className={styles.publicProjectCard}
+                href={link ?? "#client-work"}
+                target={link ? "_blank" : undefined}
+                rel={link ? "noreferrer" : undefined}
+              >
+                <p className={styles.publicProjectName}>
+                  {project.name} {link && <FiExternalLink style={{ marginLeft: "4px", fontSize: "0.8em" }} />}
+                </p>
+                <p className={styles.publicProjectDescription}>
+                  {project.description}
+                </p>
+              </a>
+            );
+          })}
         </div>
       </AnimatedSection>
 
-      <AnimatedSection id="client-work" className={styles.clientWork} delay={0.1}>
-        <h2 className={styles.sectionHeading}>Client work</h2>
+      <AnimatedSection id="softcity-projects" className={styles.clientWork} delay={0.1}>
+        <h2 className={styles.sectionHeading}>Softcity Group Projects</h2>
         <div className={styles.clientProjectList}>
-          {clientProjects.map((project) => (
+          {softcityProjects.map((project) => (
             <div key={project.name} className={styles.clientProject}>
               <p className={styles.clientProjectName}>
                 {project.name}

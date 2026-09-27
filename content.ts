@@ -98,7 +98,7 @@ export const experience: Role[] = [
 export type PublicProject = {
   name: string;
   description: string;
-  repo: string;
+  repo?: string;
   demo?: string;
 };
 
@@ -136,6 +136,10 @@ export const publicProjects: PublicProject[] = [
     description: "Full-stack sports web application.",
     repo: "https://github.com/abrahamisaiah129/GOLFANDFOOTBALLWEBAPP",
   },
+  {
+    name: "Suredez",
+    description: "Real-time parcel tracking dashboard with reliable backend data delivery (PHP, MongoDB, Tailwind).",
+  },
 ];
 
 export type ClientProject = {
@@ -145,14 +149,7 @@ export type ClientProject = {
   description: string;
 };
 
-// Client work without public repos — listed by name only, per the CV.
-export const clientProjects: ClientProject[] = [
-  {
-    name: "Suredez",
-    category: "Logistics",
-    stack: "PHP, MongoDB, Tailwind CSS",
-    description: "Real-time parcel tracking dashboard with reliable backend data delivery.",
-  },
+export const softcityProjects: ClientProject[] = [
   {
     name: "DKT Nigeria",
     category: "HealthTech",
