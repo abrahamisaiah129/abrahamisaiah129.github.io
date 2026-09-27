@@ -5,6 +5,27 @@ export const metadata: Metadata = {
   title: "Isaiah Abraham — Senior Full-Stack Engineer",
   description:
     "Senior full-stack engineer building fintech, logistics, and NGO software on the MERN stack.",
+  openGraph: {
+    title: "Isaiah Abraham — Senior Full-Stack Engineer",
+    description: "Senior full-stack engineer building fintech, logistics, and NGO software on the MERN stack.",
+    url: "https://abrahamisaiah129.github.io",
+    siteName: "Isaiah Abraham Portfolio",
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/96689032?v=4",
+        width: 400,
+        height: 400,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Isaiah Abraham — Senior Full-Stack Engineer",
+    description: "Senior full-stack engineer building fintech, logistics, and NGO software on the MERN stack.",
+    images: ["https://avatars.githubusercontent.com/u/96689032?v=4"],
+  },
 };
 
 export default function RootLayout({

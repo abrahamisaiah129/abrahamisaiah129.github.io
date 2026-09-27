@@ -11,6 +11,17 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
+      <nav className={styles.nav}>
+        <div className={styles.navLinks}>
+          <a href="#work">Selected Work</a>
+          <a href="#experience">Career</a>
+          <a href="#projects">Other Projects</a>
+          <a href="#client-work">Client Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <p className={styles.kicker}>{profile.role} · {profile.location}</p>

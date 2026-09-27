@@ -4,6 +4,36 @@
   padding: 0 24px;
 }
 
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.navLinks a:hover {
+  color: var(--accent);
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
