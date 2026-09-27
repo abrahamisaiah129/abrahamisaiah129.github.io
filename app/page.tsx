@@ -24,9 +24,17 @@ export default function Home() {
           <p className={styles.kicker}>{profile.role} · {profile.location}</p>
           <h1 className={styles.heroLine}>{profile.tagline}</h1>
           <p className={styles.heroSummary}>{profile.summary}</p>
-          <a href="#work" className={styles.cta}>
-            See recent work
-          </a>
+          <div className={styles.ctaGroup}>
+            <a href="#work" className={styles.cta}>
+              See recent work
+            </a>
+            <a 
+              href="https://docs.google.com/document/d/1_DKqmwUCgioVAoFjv97qCMvfwW2o-qiF/export?format=pdf"
+              className={styles.ctaSecondary}
+            >
+              Download CV
+            </a>
+          </div>
         </div>
         <div className={styles.heroPhotoFrame}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

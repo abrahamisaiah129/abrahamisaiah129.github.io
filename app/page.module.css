@@ -167,6 +167,13 @@
   margin: 0 0 32px;
 }
 
+.ctaGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .cta {
   display: inline-block;
   font-family: var(--font-body);
@@ -177,11 +184,32 @@
   padding: 13px 26px;
   border-radius: 3px;
   text-decoration: none;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .cta:hover {
   transform: translateY(-1px);
+  background: var(--accent-dim);
+}
+
+.ctaSecondary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  background: transparent;
+  padding: 12px 26px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.ctaSecondary:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .routeMark {
@@ -569,6 +597,10 @@
   .heroSummary {
     text-align: center;
     margin: 0 auto 32px;
+  }
+
+  .ctaGroup {
+    justify-content: center;
   }
 
   .heroPhotoFrame, .heroPhoto {
