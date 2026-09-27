@@ -9,21 +9,15 @@ import {
 } from "@/content";
 import styles from "./page.module.css";
 import AnimatedSection from "./AnimatedSection";
+import Navbar from "./Navbar";
+import BackToTop from "./BackToTop";
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <nav className={styles.nav}>
-        <div className={styles.navLinks}>
-          <a href="#work">Selected Work</a>
-          <a href="#experience">Career</a>
-          <a href="#client-work">Client Work</a>
-          <a href="#softcity-projects">Softcity Group</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+      <Navbar />
+      <BackToTop />
 
       <AnimatedSection className={styles.hero} delay={0.1}>
         <div className={styles.heroText}>

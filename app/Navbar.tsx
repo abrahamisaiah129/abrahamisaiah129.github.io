@@ -19,8 +19,24 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.navHeader}>
+      <div className={styles.navContainer}>
         <div className={styles.logo}>Abraham Isaiah</div>
+        
+        {/* Desktop Links */}
+        <div className={styles.navLinksDesktop}>
+          {navItems.map((item) => (
+            <a key={item.name} href={item.href}>
+              {item.name}
+            </a>
+          ))}
+          <a 
+            href="https://docs.google.com/document/d/1_DKqmwUCgioVAoFjv97qCMvfwW2o-qiF/export?format=pdf"
+            className={styles.downloadCvBtn}
+          >
+            Download CV
+          </a>
+        </div>
+
         <button 
           className={styles.hamburger} 
           onClick={() => setIsOpen(!isOpen)}
@@ -28,15 +44,6 @@ export default function Navbar() {
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
-      </div>
-
-      {/* Desktop Links */}
-      <div className={styles.navLinksDesktop}>
-        {navItems.map((item) => (
-          <a key={item.name} href={item.href}>
-            {item.name}
-          </a>
-        ))}
       </div>
 
       {/* Mobile Links */}
@@ -59,6 +66,12 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
+              <a 
+                href="https://docs.google.com/document/d/1_DKqmwUCgioVAoFjv97qCMvfwW2o-qiF/export?format=pdf"
+                className={styles.downloadCvBtnMobile}
+              >
+                Download CV
+              </a>
             </div>
           </motion.div>
         )}

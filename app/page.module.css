@@ -18,10 +18,12 @@
   margin-bottom: 24px;
 }
 
-.navHeader {
+.navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -29,7 +31,6 @@
   font-weight: 600;
   font-size: 18px;
   color: var(--ink);
-  display: none;
 }
 
 .hamburger {
@@ -46,6 +47,7 @@
   gap: 20px;
   font-size: 14px;
   font-family: var(--font-body);
+  align-items: center;
 }
 
 .navLinksDesktop a {
@@ -56,6 +58,55 @@
 
 .navLinksDesktop a:hover {
   color: var(--accent);
+}
+
+.downloadCvBtn {
+  background: var(--accent);
+  color: var(--bg) !important;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.downloadCvBtn:hover {
+  transform: translateY(-1px);
+  background: var(--accent-dim);
+}
+
+.downloadCvBtnMobile {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg) !important;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.backToTop:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .navLinksMobileWrapper {
