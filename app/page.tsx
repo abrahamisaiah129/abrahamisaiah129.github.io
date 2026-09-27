@@ -1,4 +1,11 @@
-import { profile, projects, experience, publicProjects, skills } from "@/content";
+import {
+  profile,
+  projects,
+  experience,
+  publicProjects,
+  clientProjects,
+  skills,
+} from "@/content";
 import styles from "./page.module.css";
 
 function RouteMark() {
@@ -52,7 +59,10 @@ export default function Home() {
             <article key={project.name} className={styles.project}>
               <div className={styles.projectHeader}>
                 <h3 className={styles.projectName}>{project.name}</h3>
-                <p className={styles.projectRole}>{project.role}</p>
+                <p className={styles.projectRole}>
+                  {project.role}
+                  {project.dates ? ` · ${project.dates}` : ""}
+                </p>
               </div>
               <p className={styles.projectSummary}>{project.summary}</p>
               <p className={styles.projectDetail}>{project.detail}</p>
@@ -73,13 +83,16 @@ export default function Home() {
       </section>
 
       <section id="experience" className={styles.experience}>
-        <h2 className={styles.sectionHeading}>Also</h2>
+        <h2 className={styles.sectionHeading}>Career</h2>
         <div className={styles.experienceList}>
           {experience.map((role) => (
-            <article key={role.title} className={styles.experienceItem}>
-              <p className={styles.experienceTitle}>
-                {role.title}, {role.org}
-              </p>
+            <article key={role.title + role.org} className={styles.experienceItem}>
+              <div className={styles.experienceHeader}>
+                <p className={styles.experienceTitle}>
+                  {role.title}, {role.org}
+                </p>
+                <p className={styles.experienceDates}>{role.dates}</p>
+              </div>
               <p className={styles.experienceDetail}>{role.detail}</p>
             </article>
           ))}
@@ -106,6 +119,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="client-work" className={styles.clientWork}>
+        <h2 className={styles.sectionHeading}>Client work</h2>
+        <div className={styles.clientProjectList}>
+          {clientProjects.map((project) => (
+            <div key={project.name} className={styles.clientProject}>
+              <p className={styles.clientProjectName}>
+                {project.name}
+                <span className={styles.clientProjectCategory}>
+                  {" "}
+                  — {project.category}
+                </span>
+              </p>
+              <p className={styles.clientProjectDescription}>
+                {project.description}
+              </p>
+              <p className={styles.clientProjectStack}>{project.stack}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="about" className={styles.about}>
         <h2 className={styles.sectionHeading}>About</h2>
         <p className={styles.aboutText}>{profile.summary}</p>
@@ -121,6 +155,7 @@ export default function Home() {
         </p>
         <div className={styles.contactLinks}>
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
           <a href={profile.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
