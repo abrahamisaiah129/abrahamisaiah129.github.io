@@ -104,6 +104,7 @@ export const publicProjects: PublicProject[] = [
     name: "Mima",
     description: "Official web presence and landing platform for Mima.",
     repo: "https://github.com/abrahamisaiah129/mima-official",
+    demo: "https://mimaclient-bn51nzjli-isaiahs-projects-67393298.vercel.app",
   },
   {
     name: "Golf & Football Web App",
